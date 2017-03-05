@@ -23,7 +23,7 @@ const withValueImpl = (initialState, mapStateProps) => BaseComponent => {
     render() {
       return factory({
         ...this.props,
-				...mapStateProps(this.state.stateValue, this.updateStateValue),
+        ...mapStateProps(this.state.stateValue, this.updateStateValue),
       });
     }
   }
