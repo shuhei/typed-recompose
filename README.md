@@ -24,3 +24,10 @@ This gist is an effort to make it happen based on the PRs above.
     function Something({ open, toggle }) { /* ... */ }
     const enhancedSomething = compose(withOpen, withToggle)(Something);
     ```
+
+## Reference
+
+- [type_annotation.ml](https://github.com/facebook/flow/blob/v0.40.0/src/typing/type_annotation.ml)
+- [Flow type cheat sheet](http://www.saltycrane.com/blog/2016/06/flow-type-cheat-sheet/)
+- [Secret Flow Types](https://medium.com/@raxwunter/secret-flow-types-86b2ebb30951#.fs3zi2lnb)
+- [flowtypeのUtility Typeについて その2](http://qiita.com/kinzal/items/c55f81e6af1a22a4763f) (Japanese)
