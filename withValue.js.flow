@@ -1,0 +1,7 @@
+// @flow
+import type { Fn1, HOC } from 'recompose';
+
+declare export function withValue<A, B, T>(
+  initialState: Fn1<B, T> | T,
+  mapStateProps: (state: T, setState: Fn1<T, void>) => A
+): HOC<A & B, B>;
