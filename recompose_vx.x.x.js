@@ -64,7 +64,7 @@ declare module 'recompose' {
   //   stateName: SN,
   //   stateUpdaterName: SUN,
   //   initialState: T & (props: B) => T,
-  // ): HOC<{ [SN]: T } & { [SUN]: (_: T) => void & B }, B>;
+  // ): HOC<{ [SN]: T } & { [SUN]: (_: T) => void } & B, B>;
 
   declare function withReducer<A, B, Action, State>(
     stateName: string,
