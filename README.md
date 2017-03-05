@@ -1,6 +1,6 @@
 # WIP: Typing HOCs with recompose
 
-It's hard to keep prop types of underlying components of HOCs. Even [the official documentation](https://flowtype.org/docs/react.html#higher-order-components) is not working well. It's even harder to have multiple HOCs typed and maintain with peer developers. Here comes recompose, the HOC utility module.
+It's hard to keep prop types of underlying components of HOCs. Even [the official documentation](https://flowtype.org/docs/react.html#higher-order-components) is not working well. It's even harder to have multiple HOCs typed and maintain with peer developers. Here comes `recompose`, the HOC utility module. If we have `recompose` properly typed, we can omit typing of our own HOCs taking advantage of `recompose` and flowtype's type inference.
 
 `recompose` still doesn't have official flowtype definition, but there are some efforts:
 
