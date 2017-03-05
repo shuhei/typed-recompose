@@ -30,4 +30,5 @@ This gist is an effort to make it happen based on the PRs above.
 - [type_annotation.ml](https://github.com/facebook/flow/blob/v0.40.0/src/typing/type_annotation.ml)
 - [Flow type cheat sheet](http://www.saltycrane.com/blog/2016/06/flow-type-cheat-sheet/)
 - [Secret Flow Types](https://medium.com/@raxwunter/secret-flow-types-86b2ebb30951#.fs3zi2lnb)
+- [flowtypeのUtility Typeについて その1](http://qiita.com/kinzal/items/e1898c89af5618e18334) (Japanese)
 - [flowtypeのUtility Typeについて その2](http://qiita.com/kinzal/items/c55f81e6af1a22a4763f) (Japanese)
