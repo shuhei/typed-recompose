@@ -16,6 +16,7 @@ This gist is an effort to make it happen based on the PRs above.
   - OK: `Fn1<A, B> | T`
 - HOCs that provide additional props may return `HOC<$Shape<A & B>, B>`. In this way, the underlying component can ignore some unnecessary intermediate props.
   - For example:
+
   ```js
   const withOpen = withValue(false, (open, setOpen) => ({ open, setOpen }));
   const withToggle = withProps(({ open, setOpen }) => ({ toggle: () => setOpen(!open) }));
