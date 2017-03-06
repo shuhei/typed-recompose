@@ -9,6 +9,12 @@ It's hard to keep prop types of underlying components of HOCs. Even [the officia
 
 This gist is an effort to make it happen based on the PRs above.
 
+## Goals
+
+- Keep types of underlying component's `props`
+- Allow underlying component to ignore additional `props` by HOC
+- No additional type annotations on top of `recompose`
+
 ## Implementation details
 
 - In a union type, a specific type should come before more general types.
