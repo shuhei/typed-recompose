@@ -30,6 +30,19 @@ This gist is an effort to make it happen based on the PRs above.
     function Something({ open, toggle }) { /* ... */ }
     const enhancedSomething = compose(withOpen, withToggle)(Something);
     ```
+- `suppress_comment` may suppress also next next line in addition to next line
+  - For example:
+    ```
+    // .flowconfig
+    [options]
+    suppress_comment=^ $ExpectError$
+    ```
+    
+    ```js
+    // $ExpectError
+    'foo'.bar();
+    'foo'.bar(); // This line's error is also suppressed!
+    ```
 
 ## Reference
 
