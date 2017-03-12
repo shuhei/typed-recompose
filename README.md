@@ -30,12 +30,14 @@ This gist is an effort to make it happen based on the PRs above.
     function Something({ open, toggle }) { /* ... */ }
     const enhancedSomething = compose(withOpen, withToggle)(Something);
     ```
-- `suppress_comment` may suppress also next next line in addition to next line
+- `suppress_comment` suppresses also next next line in addition to next line.
   - For example:
     ```
     // .flowconfig
     [options]
     suppress_comment=^ $ExpectError$
+    // or
+    suppress_comment=\\(.\\|\n\\)*\\$ExpectError
     ```
     
     ```js
