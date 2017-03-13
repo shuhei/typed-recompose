@@ -1,0 +1,9 @@
+[ignore]
+
+[include]
+
+[libs]
+decl/recompose.js
+
+[options]
+suppress_comment=\\(.\\|\n\\)*\\$ExpectError

@@ -1,5 +1,11 @@
 declare module 'recompose' {
 
+   /*
+    Fn1 = Function with arity of 1
+    HOC = Higher order component
+    SCU = Should component update function
+  */
+
   declare type FunctionComponent<A> = (props: A) => ?React$Element<any>;
 
   declare type ClassComponent<D, A, S> = Class<React$Component<D, A, S>>;
@@ -13,6 +19,17 @@ declare module 'recompose' {
   declare type SCU<A> = (props: A, nextProps: A) => boolean;
 
   declare function id<A>(a: A): A;
+  declare function compose<A, B, C, D, E, F, G, H, I, J, K, L, M, O, P, Q>(pq: Fn1<P, Q>, op: Fn1<O, P>, mo: Fn1<M, O>, lm: Fn1<L, M>, kl: Fn1<K, L>, jk: Fn1<J, K>, ij: Fn1<I, J>, hi: Fn1<H, I>, gh: Fn1<G, H>, fg: Fn1<F, G>, ef: Fn1<E, F>, de: Fn1<D, E>, cd: Fn1<C, D>, bc: Fn1<B, C>, ab: Fn1<A, B>): Fn1<A, E>;
+  declare function compose<A, B, C, D, E, F, G, H, I, J, K, L, M, O, P>(op: Fn1<O, P>, mo: Fn1<M, O>, lm: Fn1<L, M>, kl: Fn1<K, L>, jk: Fn1<J, K>, ij: Fn1<I, J>, hi: Fn1<H, I>, gh: Fn1<G, H>, fg: Fn1<F, G>, ef: Fn1<E, F>, de: Fn1<D, E>, cd: Fn1<C, D>, bc: Fn1<B, C>, ab: Fn1<A, B>): Fn1<A, E>;
+  declare function compose<A, B, C, D, E, F, G, H, I, J, K, L, M, O>(mo: Fn1<M, O>, lm: Fn1<L, M>, kl: Fn1<K, L>, jk: Fn1<J, K>, ij: Fn1<I, J>, hi: Fn1<H, I>, gh: Fn1<G, H>, fg: Fn1<F, G>, ef: Fn1<E, F>, de: Fn1<D, E>, cd: Fn1<C, D>, bc: Fn1<B, C>, ab: Fn1<A, B>): Fn1<A, E>;
+  declare function compose<A, B, C, D, E, F, G, H, I, J, K, L, M>(lm: Fn1<L, M>, kl: Fn1<K, L>, jk: Fn1<J, K>, ij: Fn1<I, J>, hi: Fn1<H, I>, gh: Fn1<G, H>, fg: Fn1<F, G>, ef: Fn1<E, F>, de: Fn1<D, E>, cd: Fn1<C, D>, bc: Fn1<B, C>, ab: Fn1<A, B>): Fn1<A, E>;
+  declare function compose<A, B, C, D, E, F, G, H, I, J, K, L>(kl: Fn1<K, L>, jk: Fn1<J, K>, ij: Fn1<I, J>, hi: Fn1<H, I>, gh: Fn1<G, H>, fg: Fn1<F, G>, ef: Fn1<E, F>, de: Fn1<D, E>, cd: Fn1<C, D>, bc: Fn1<B, C>, ab: Fn1<A, B>): Fn1<A, E>;
+  declare function compose<A, B, C, D, E, F, G, H, I, J, K>(jk: Fn1<J, K>, ij: Fn1<I, J>, hi: Fn1<H, I>, gh: Fn1<G, H>, fg: Fn1<F, G>, ef: Fn1<E, F>, de: Fn1<D, E>, cd: Fn1<C, D>, bc: Fn1<B, C>, ab: Fn1<A, B>): Fn1<A, E>;
+  declare function compose<A, B, C, D, E, F, G, H, I, J>(ij: Fn1<I, J>, hi: Fn1<H, I>, gh: Fn1<G, H>, fg: Fn1<F, G>, ef: Fn1<E, F>, de: Fn1<D, E>, cd: Fn1<C, D>, bc: Fn1<B, C>, ab: Fn1<A, B>): Fn1<A, E>;
+  declare function compose<A, B, C, D, E, F, G, H, I>(hi: Fn1<H, I>, gh: Fn1<G, H>, fg: Fn1<F, G>, ef: Fn1<E, F>, de: Fn1<D, E>, cd: Fn1<C, D>, bc: Fn1<B, C>, ab: Fn1<A, B>): Fn1<A, E>;
+  declare function compose<A, B, C, D, E, F, G, H>(gh: Fn1<G, H>, fg: Fn1<F, G>, ef: Fn1<E, F>, de: Fn1<D, E>, cd: Fn1<C, D>, bc: Fn1<B, C>, ab: Fn1<A, B>): Fn1<A, E>;
+  declare function compose<A, B, C, D, E, F, G>(fg: Fn1<F, G>, ef: Fn1<E, F>, de: Fn1<D, E>, cd: Fn1<C, D>, bc: Fn1<B, C>, ab: Fn1<A, B>): Fn1<A, E>;
+  declare function compose<A, B, C, D, E, F>(ef: Fn1<E, F>, de: Fn1<D, E>, cd: Fn1<C, D>, bc: Fn1<B, C>, ab: Fn1<A, B>): Fn1<A, E>;
   declare function compose<A, B, C, D, E>(de: Fn1<D, E>, cd: Fn1<C, D>, bc: Fn1<B, C>, ab: Fn1<A, B>): Fn1<A, E>;
   declare function compose<A, B, C, D>(cd: Fn1<C, D>, bc: Fn1<B, C>, ab: Fn1<A, B>): Fn1<A, D>;
   declare function compose<A, B, C>(bc: Fn1<B, C>, ab: Fn1<A, B>): Fn1<A, C>;
@@ -20,17 +37,23 @@ declare module 'recompose' {
   declare function compose<A>(): id<A>;
 
   declare function mapProps<A, B>(
-    propsMapper: (ownerProps: B) => A
+    propsMapper: Fn1<B, A>
   ): HOC<A, B>;
 
   declare function withProps<A, B>(
     createProps: Fn1<B, A> | A
   ): HOC<$Shape<A & B>, B>;
 
+  // declare function withPropsOnChange<A, B, D: $Diff<B, A>>(
+    // shouldMapOrKeys: Array<$Keys<D>> | SCU<D>,
+    // createProps: Fn1<D, A>
+  // ): HOC<B, D>;
   declare function withPropsOnChange<A, B>(
     shouldMapOrKeys: Array<$Keys<B>> | SCU<B>,
-    createProps: (ownerProps: B) => A
-  ): HOC<A, B>;
+    createProps: Fn1<B, A>
+  // ): HOC<A & B, B>;
+  ): HOC<$Shape<A & B>, B>;
+  // ): HOC<$Shape<A> & B, B>;
 
   declare function withHandlers<B, A: { [key: string]: (props: B) => Function }>(
     handlerCreators: A
@@ -40,11 +63,13 @@ declare module 'recompose' {
     props: D
   ): HOC<A, B>;
 
+  // TODO: Any way to relate A and B?
   declare function renameProp<A, B>(
     oldName: $Keys<A>,
     newName: $Keys<B>
   ): HOC<A, B>;
 
+  // TODO: Any way to relate A and B?
   declare function renameProps<A, B>(
     nameMap: { [key: $Keys<A>]: $Keys<B> }
   ): HOC<A, B>;
@@ -56,15 +81,8 @@ declare module 'recompose' {
   declare function withState<A, B, T>(
     stateName: string,
     stateUpdaterName: string,
-    initialState: T | (props: B) => T
-  ): HOC<A, B>;
-  // FIXME: The following doesn't work because `B & { [SN]: T } & { [SUN]: (_: T) => void }`
-  // means an object with keys that are keys of B *and* SN *and* SUN, which doesn't make sense.
-  // declare function withState<A, B, T, SN: string, SUN: string>(
-  //   stateName: SN,
-  //   stateUpdaterName: SUN,
-  //   initialState: T & (props: B) => T,
-  // ): HOC<{ [SN]: T } & { [SUN]: (_: T) => void } & B, B>;
+    initialState: Fn1<B, T> | T
+  ): HOC<$Shape<A & B>, B>;
 
   declare function withReducer<A, B, Action, State>(
     stateName: string,
@@ -74,14 +92,15 @@ declare module 'recompose' {
   ): HOC<A, B>;
 
   declare function branch<A, B>(
-    test: (ownerProps: B) => boolean,
+    test: Fn1<B, boolean>,
     left: HOC<A, B>,
-    right: HOC<A, B>
+    right?: HOC<A, B>
   ): HOC<A, B>;
 
-  declare function renderComponent<A>(C: Component<A> | string): HOC<A, A>;
+  declare function renderComponent<A, B>(C: Component<A>): HOC<B, A>;
+  declare function renderComponent<A>(C: string): HOC<A, {}>;
 
-  declare function renderNothing<A>(C: Component<A>): HOC<A, {}>;
+  declare function renderNothing<A>(): HOC<A, {}>;
 
   declare function shouldUpdate<A>(
     test: SCU<A>
