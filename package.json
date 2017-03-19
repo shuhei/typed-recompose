@@ -1,10 +1,10 @@
 {
-  "name": "flow-test-2",
-  "version": "1.0.0",
+  "name": "@shuhei/typed-recompose",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "flow"
   },
   "author": "",
   "license": "ISC",
